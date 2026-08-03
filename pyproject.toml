@@ -1,0 +1,19 @@
+[project]
+name = "dev-sm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "fastapi[standard]>=0.141.1,<0.142.0",
+]
+
+[project.scripts]
+dev-sm = "dev_sm:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false
