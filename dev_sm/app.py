@@ -1,16 +1,19 @@
-from http import HTTPStatus
+from fastapi import FastAPI, status
 
-from fastapi import FastAPI
-
-from dev_sm.schemas import Message
+from dev_sm.routers import users
 
 app = FastAPI(title='Dev Social Media')
 
+app.include_router(
+    router=users.router,
+    prefix='/api/v1/users',
+    tags=['users'],
+)
+
 
 @app.get(
-    '/',
-    status_code=HTTPStatus.OK,
-    response_model=Message,
+    '/health_check',
+    status_code=status.HTTP_200_OK,
 )
-def read_root():
-    return {'message': 'Hello world!'}
+def health_check():
+    return {'status': 'OK'}
