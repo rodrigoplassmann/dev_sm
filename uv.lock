@@ -140,6 +140,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "pydantic-settings" },
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "ruff" },
@@ -154,6 +155,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "pydantic-settings", specifier = ">=2.14.2" },
     { name = "pytest", specifier = ">=9.1.1" },
     { name = "pytest-cov", specifier = ">=7.1.0" },
     { name = "ruff", specifier = ">=0.16.1" },

@@ -21,6 +21,7 @@ package = false
 
 [dependency-groups]
 dev = [
+    "pydantic-settings>=2.14.2",
     "pytest>=9.1.1",
     "pytest-cov>=7.1.0",
     "ruff>=0.16.1",
