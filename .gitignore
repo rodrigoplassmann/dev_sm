@@ -7,6 +7,9 @@ slides/brutos/*.html
 *.db
 *.bd
 
+# Project stuff
+database.db
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
