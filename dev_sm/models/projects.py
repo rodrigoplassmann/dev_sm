@@ -29,7 +29,7 @@ class Project(Base):
     users: Mapped[List[User]] = relationship(
         secondary='project_users', back_populates='projects'
     )
-    tags: Mapped[List['Tag']] = relationship(
+    tags: Mapped[List[Tag]] = relationship(
         secondary='project_tags', back_populates='projects'
     )
 
