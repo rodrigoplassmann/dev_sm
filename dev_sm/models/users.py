@@ -1,10 +1,15 @@
+from __future__ import annotations
+
 from datetime import datetime
-from typing import Optional
+from typing import TYPE_CHECKING, List, Optional
 
 from sqlalchemy import func
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from dev_sm.models import Base
+
+if TYPE_CHECKING:
+    from dev_sm.models.projects import Project
 
 
 class User(Base):
@@ -26,4 +31,7 @@ class User(Base):
     )
     created_at: Mapped[datetime] = mapped_column(
         server_default=func.now(),
+    )
+    projects: Mapped[List[Project]] = relationship(
+        secondary='project_users', back_populates='users'
     )
